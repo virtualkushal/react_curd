@@ -1,16 +1,22 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import "./App.css";
 
 function App() {
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(() => {
+    const saved = localStorage.getItem("todos");
+    return saved ? JSON.parse(saved) : [];
+  });
   const [input, setInput] = useState("");
   const [editIndex, setEditIndex] = useState(null);
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   // DELETE function
   const deleteTodo = (indexToDelete) => {
     const updated = todos.filter((_, index) => index !== indexToDelete);
     setTodos(updated);
-    // if you were editing this todo, reset editIndex
     if (editIndex === indexToDelete) setEditIndex(null);
   };
 
