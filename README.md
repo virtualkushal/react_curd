@@ -20,7 +20,7 @@ A modern **Todo App** built with **React** that allows you to **add, edit, delet
 ![Todo App Screenshot](src/assets/image.png)
 
 ## Getting Started
-1. Clone the repository: `git clone <your-repo-url>` and `cd todo-app`  
+1. Clone the repository: `git clone https://github.com/virtualkushal/react_curd.git` and `cd todo-app`  
 2. Install dependencies: `npm install`  
 3. Start the app: `npm start`  
 - The app will run on [http://localhost:3000](http://localhost:3000)  
