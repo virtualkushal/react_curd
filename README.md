@@ -10,24 +10,14 @@ A modern **Todo App** built with **React** that allows you to **add, edit, delet
 - Modern UI with animated gradient background and polished buttons  
 
 ## Demo Screenshot
-*(Add your screenshot here later if you want)*  
-
+![Todo App Screenshot](src/assets/screenshot.png)
 ## Technologies Used
 - React (Functional Components & Hooks)  
 - LocalStorage API  
 - CSS3 (Animated Gradient Background & Modern Buttons)  
 
 ## Project Structure
-todo-app/
-├─ public/
-├─ src/
-│  ├─ components/
-│  │  └─ Todo.jsx
-│  ├─ App.jsx
-│  ├─ App.css
-│  └─ index.js
-├─ package.json
-└─ README.md
+![Todo App Screenshot](src/assets/image.png)
 
 ## Getting Started
 1. Clone the repository: `git clone <your-repo-url>` and `cd todo-app`  
