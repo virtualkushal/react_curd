@@ -4,17 +4,35 @@ import "./App.css";
 function App() {
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
+  const [editIndex, setEditIndex] = useState(null);
 
-  // DELETE function must come after state
+  // DELETE function
   const deleteTodo = (indexToDelete) => {
     const updated = todos.filter((_, index) => index !== indexToDelete);
     setTodos(updated);
+    // if you were editing this todo, reset editIndex
+    if (editIndex === indexToDelete) setEditIndex(null);
   };
 
+  // EDIT function
+  const editTodo = (index) => {
+    setInput(todos[index]);
+    setEditIndex(index);
+  };
+
+  // ADD / UPDATE function
   const addTodo = () => {
     if (input.trim() === "") return;
 
-    setTodos([...todos, input]);
+    if (editIndex !== null) {
+      const updated = [...todos];
+      updated[editIndex] = input;
+      setTodos(updated);
+      setEditIndex(null);
+    } else {
+      setTodos([...todos, input]);
+    }
+
     setInput("");
   };
 
@@ -30,19 +48,26 @@ function App() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-          <button onClick={addTodo}>Add</button>
+          <button onClick={addTodo}>
+            {editIndex !== null ? "Update" : "Add"}
+          </button>
         </div>
 
         <ul className="todo-list">
           {todos.map((todo, index) => (
             <li key={index} className="todo-item">
               {todo}
-              <button
-                className="delete-btn"
-                onClick={() => deleteTodo(index)}
-              >
-                Delete
-              </button>
+              <div>
+                <button className="edit-btn" onClick={() => editTodo(index)}>
+                  Edit
+                </button>
+                <button
+                  className="delete-btn"
+                  onClick={() => deleteTodo(index)}
+                >
+                  Delete
+                </button>
+              </div>
             </li>
           ))}
         </ul>
