@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
+import Todo from "./components/Todo";
 
 function App() {
   const [todos, setTodos] = useState(() => {
@@ -13,20 +14,17 @@ function App() {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-  // DELETE function
   const deleteTodo = (indexToDelete) => {
     const updated = todos.filter((_, index) => index !== indexToDelete);
     setTodos(updated);
     if (editIndex === indexToDelete) setEditIndex(null);
   };
 
-  // EDIT function
   const editTodo = (index) => {
     setInput(todos[index]);
     setEditIndex(index);
   };
 
-  // ADD / UPDATE function
   const addTodo = () => {
     if (input.trim() === "") return;
 
@@ -61,20 +59,12 @@ function App() {
 
         <ul className="todo-list">
           {todos.map((todo, index) => (
-            <li key={index} className="todo-item">
-              {todo}
-              <div>
-                <button className="edit-btn" onClick={() => editTodo(index)}>
-                  Edit
-                </button>
-                <button
-                  className="delete-btn"
-                  onClick={() => deleteTodo(index)}
-                >
-                  Delete
-                </button>
-              </div>
-            </li>
+            <Todo
+              key={index}
+              text={todo}
+              onEdit={() => editTodo(index)}
+              onDelete={() => deleteTodo(index)}
+            />
           ))}
         </ul>
       </div>
