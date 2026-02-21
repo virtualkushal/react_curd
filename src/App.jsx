@@ -1,6 +1,8 @@
 import { useState } from "react";
+import "./App.css";
 
 function App() {
+  
   const [todos, setTodos] = useState([]);
   const [input, setInput] = useState("");
 
@@ -12,23 +14,28 @@ function App() {
   };
 
   return (
-    <div>
-      <h1>Todo CRUD App</h1>
+    <div className="container">
+      <div className="card">
+        <h1>Todo App</h1>
 
-      <input
-        type="text"
-        value={input}
-        onChange={(e) => setInput(e.target.value)}
-        placeholder="Enter todo"
-      />
+        <div className="input-group">
+          <input
+            type="text"
+            placeholder="Enter a todo..."
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+          />
+          <button onClick={addTodo}>Add</button>
+        </div>
 
-      <button onClick={addTodo}>Add Todo</button>
-
-      <ul>
-        {todos.map((todo, index) => (
-          <li key={index}>{todo}</li>
-        ))}
-      </ul>
+        <ul className="todo-list">
+          {todos.map((todo, index) => (
+            <li key={index} className="todo-item">
+              {todo}
+            </li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 }
