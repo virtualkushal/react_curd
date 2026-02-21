@@ -45,6 +45,7 @@ function App() {
       <div className="card">
         <h1>Todo App</h1>
 
+        {/* Input + Add/Update Button */}
         <div className="input-group">
           <input
             type="text"
@@ -52,11 +53,17 @@ function App() {
             value={input}
             onChange={(e) => setInput(e.target.value)}
           />
-          <button onClick={addTodo}>
+          <button className="action-btn" onClick={addTodo}>
             {editIndex !== null ? "Update" : "Add"}
           </button>
         </div>
 
+        {/* Delete All Button */}
+        <button className="delete-all-btn" onClick={() => setTodos([])}>
+          Delete All
+        </button>
+
+        {/* Todo List */}
         <ul className="todo-list">
           {todos.map((todo, index) => (
             <Todo

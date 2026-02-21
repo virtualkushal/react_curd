@@ -8,63 +8,119 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background: linear-gradient(-45deg, #ec79be, #5651e1, #42e695, #f9d423);
+  background-size: 400% 400%;
+  animation: gradientBG 15s ease infinite;
 }
 
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Card */
 .card {
-  background: white;
+  background: rgba(255, 255, 255, 0.95);
   padding: 30px;
   border-radius: 15px;
   width: 400px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
+/* Heading */
 h1 {
   text-align: center;
+  color: #2d29a5;
+  margin-bottom: 20px;
 }
 
+/* Input group */
 .input-group {
   display: flex;
   gap: 10px;
+  margin-bottom: 10px;
 }
 
 input {
   flex: 1;
-  padding: 8px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 2px solid #5651e1;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
 }
 
-button {
-  padding: 8px 15px;
-  background: #4caf50;
+input:focus {
+  border-color: #f9d423;
+  box-shadow: 0 0 8px rgba(249, 212, 35, 0.6);
+}
+
+/* Buttons */
+.action-btn {
+  padding: 10px 15px;
+  border-radius: 10px;
+  background-color: #4caf50;
   color: white;
   border: none;
   cursor: pointer;
-  border-radius: 5px;
+  transition: 0.3s;
+  min-width: 75px;
 }
 
+.action-btn:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+/* Delete button inside todo */
+.delete-btn {
+  background-color: red;
+}
+
+.delete-btn:hover {
+  background-color: #c62828;
+}
+
+/* Delete All Button */
+.delete-all-btn {
+  background-color: #e53935;
+  color: white;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.delete-all-btn:hover {
+  background-color: #d32f2f;
+  transform: scale(1.02);
+}
+
+/* Todo list */
 .todo-list {
-  margin-top: 20px;
+  margin-top: 10px;
   padding: 0;
 }
 
 .todo-item {
   list-style: none;
-  padding: 10px;
+  padding: 12px 15px;
   background: #f2f2f2;
-  margin-bottom: 8px;
-  border-radius: 5px;
-}
-.todo-item {
-  list-style: none;
-  padding: 10px;
-  background: #f2f2f2;
-  margin-bottom: 8px;
-  border-radius: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.delete-btn {
-  background: red;
+.button-group {
+  display: flex;
+  gap: 5px;
 }
