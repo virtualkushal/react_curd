@@ -1,16 +1,50 @@
-# React + Vite
+# 📝 Todo App – React Version 5
+A modern **Todo App** built with **React** that allows you to **add, edit, delete, and delete all todos**, with data **persisted in LocalStorage**. The app features a **beautiful animated gradient background**, responsive buttons, and a clean user interface.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Features
+- Add a new todo  
+- Edit existing todos  
+- Delete individual todos  
+- Delete all todos at once  
+- Todos are saved in **LocalStorage** (data persists after refresh)  
+- Modern UI with animated gradient background and polished buttons  
 
-Currently, two official plugins are available:
+## Demo Screenshot
+*(Add your screenshot here later if you want)*  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Technologies Used
+- React (Functional Components & Hooks)  
+- LocalStorage API  
+- CSS3 (Animated Gradient Background & Modern Buttons)  
 
-## React Compiler
+## Project Structure
+todo-app/
+├─ public/
+├─ src/
+│  ├─ components/
+│  │  └─ Todo.jsx
+│  ├─ App.jsx
+│  ├─ App.css
+│  └─ index.js
+├─ package.json
+└─ README.md
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Getting Started
+1. Clone the repository: `git clone <your-repo-url>` and `cd todo-app`  
+2. Install dependencies: `npm install`  
+3. Start the app: `npm start`  
+- The app will run on [http://localhost:3000](http://localhost:3000)  
 
-## Expanding the ESLint configuration
+## Usage
+1. Type a todo in the input box  
+2. Click **Add** to add a new todo  
+3. Click **Edit** to modify a todo  
+4. Click **Delete** to remove a single todo  
+5. Click **Delete All** to remove all todos  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Commit History for Versioning
+- Version 1: Basic add functionality  
+- Version 2: Add & delete individual todos  
+- Version 3: Edit todo functionality added  
+- Version 4: Persist todos using LocalStorage  
+- Version 5: Modern UI, Delete All button, styled buttons  
